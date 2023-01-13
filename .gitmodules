@@ -1,0 +1,6 @@
+[submodule "julia_scrapers"]
+	path = julia_scrapers
+	url = https://github.com/iodinedev/julia_scrapers.git
+[submodule "julia_website"]
+	path = julia_website
+	url = https://github.com/iodinedev/julia_website.git
