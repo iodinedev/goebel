@@ -16,7 +16,7 @@ fn main() {
             cd goebel_scrapers &&
             source venv/bin/activate &&
             pip install -r requirements.txt &&
-            python3 run.py &&
+            python3 run.py
         ")
         .output()
         .expect("failed to execute process");
