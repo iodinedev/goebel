@@ -7,7 +7,21 @@ fn main() {
 
     let output = Command::new("bash")
         .arg("-c")
-        .arg("pwd && mkdir -p ./custom && mkdir -p ./goebel_website/output && rm -rf ./goebel_scraper/custom && mkdir -p ./goebel_scrapers/custom && cp -a ./custom/. ./goebel_scrapers/custom && cd goebel_scrapers && python3 run.py && cd .. && cp -a ./goebel_scrapers/output/. ./goebel_website/output && docker compose up -d")
+        .arg("
+            pwd &&
+            mkdir -p ./custom &&
+            mkdir -p ./goebel_website/output &&
+            rm -rf ./goebel_scraper/custom &&
+            mkdir -p ./goebel_scrapers/custom &&
+            cp -a ./custom/. ./goebel_scrapers/custom &&
+            cd goebel_scrapers &&
+            source venv/bin/activate &&
+            python3 run.py &&
+            deactivate &&
+            cd .. &&
+            cp -a ./goebel_scrapers/output/. ./goebel_website/output &&
+            docker compose up -d
+        ")
         .output()
         .expect("failed to execute process");
 
