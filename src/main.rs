@@ -16,6 +16,7 @@ fn main() {
             cp -a ./custom/. ./goebel_scrapers/custom &&
             cd goebel_scrapers &&
             source venv/bin/activate &&
+            pip install -r requirements.txt &&
             python3 run.py &&
             deactivate &&
             cd .. &&
