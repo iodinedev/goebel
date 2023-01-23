@@ -8,7 +8,6 @@ fn main() {
     let output = Command::new("bash")
         .arg("-c")
         .arg("
-            pwd &&
             mkdir -p ./custom &&
             mkdir -p ./goebel_website/output &&
             rm -rf ./goebel_scraper/custom &&
