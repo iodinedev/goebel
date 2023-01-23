@@ -29,7 +29,7 @@ fn main() {
 
     println!("status: {}", output.status);
     println!("stdout: {}", String::from_utf8_lossy(&output.stdout));
-    println!("stderr: {}", String::from_utf8_lossy(&output.stderr));
+    // println!("stderr: {}", String::from_utf8_lossy(&output.stderr));
 }
 
 fn test(prt: &str) {
