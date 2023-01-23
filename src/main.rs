@@ -28,6 +28,10 @@ fn main() {
     println!("status: {}", output.status);
     println!("stdout: {}", String::from_utf8_lossy(&output.stdout));
     // println!("stderr: {}", String::from_utf8_lossy(&output.stderr));
+    // If there is an error, save it to a file because it is too long to print
+    if !output.stderr.is_empty() {
+        std::fs::write("error.txt", output.stderr).expect("Unable to write file");
+    }
 }
 
 fn test(prt: &str) {
