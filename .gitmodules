@@ -4,3 +4,9 @@
 [submodule "julia_website"]
 	path = julia_website
 	url = https://github.com/iodinedev/julia_website.git
+[submodule "goebel_website"]
+	path = goebel_website
+	url = https://github.com/iodinedev/goebel_website.git
+[submodule "goebel_scrapers"]
+	path = goebel_scrapers
+	url = https://github.com/iodinedev/goebel_scrapers
