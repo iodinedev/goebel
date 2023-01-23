@@ -17,13 +17,15 @@ fn main() {
             source venv/bin/activate &&
             pip install -r requirements.txt &&
             python3 run.py &&
-            deactivate &&
-            cd .. &&
-            cp -a ./goebel_scrapers/output/. ./goebel_website/output &&
-            docker compose up -d
         ")
         .output()
         .expect("failed to execute process");
+
+        //
+        // deactivate &&
+        // cd .. &&
+        // cp -a ./goebel_scrapers/output/. ./goebel_website/output &&
+        // docker compose up -d
 
     println!("status: {}", output.status);
     println!("stdout: {}", String::from_utf8_lossy(&output.stdout));
