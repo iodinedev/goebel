@@ -1,0 +1,20 @@
+services:
+  proxy:
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - type: bind
+        source: ./nginx-proxy-conf
+        target: /etc/nginx/conf.d/
+    stdin_open: true
+    tty: true
+  cruzer:
+    build: ./goebel_calendar/
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    tty: true
+    depends_on:
+      - "proxy"
