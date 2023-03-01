@@ -1,0 +1,2 @@
+name,event_type,url,ages,image,calendar_time,show_time,venue_name,venue_location,google_location,description,next_occurance,last_updated
+Example Custom Event,music,https://www.google.com,all,https://static.wixstatic.com/media/7502f1_3de5f3466687440eba8389bfc93e311d~mv2.jpeg,"Tue, May 17 2022, 6:00 PM",6:00 PM,"Kansas, the Venue","Kansas, Fern Street, Santa Cruz, CA, USA",https://www.google.com/maps/search/?api=1&query=Shanty%20Shack%20Brewing%2C%20Fern%20Street%2C%20Santa%20Cruz%2C%20CA%2C%20USA,This is a description.,1652828413.773836,2023-01-13T14:25:13.773836
