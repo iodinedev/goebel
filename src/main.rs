@@ -6,19 +6,21 @@ use std::process::Command;
 use cronjob::CronJob;
 
 fn main() {
+    // Run the script once
+    run("");
+
     // Run the script every 60 minutes
     let mut cron = CronJob::new("Update Content", run);
 
     // crontab: 0 * * * *
 
     // Every hour
+    cron.seconds("0");
     cron.minutes("0");
     cron.hours("*");
 
     cron.start_job();
 
-    // Run the script once
-    // run();
 }
 
 fn run(_: &str) {
