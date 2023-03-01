@@ -1,8 +1,27 @@
 // Clones all the JSON files from ./custom into ./julia_scrapers/custom, runs the python script ./julia_scrapers/run.py, then copies the output files from ./julia_scrapers/output into ./julia_website/output and starts the ./julia_website using docker compose
 
+extern crate cronjob;
+
 use std::process::Command;
+use cronjob::CronJob;
 
 fn main() {
+    // Run the script every 60 minutes
+    let mut cron = CronJob::new("Update Content", run);
+
+    // crontab: 0 * * * *
+
+    // Every hour
+    cron.minutes("0");
+    cron.hours("*");
+
+    cron.start_job();
+
+    // Run the script once
+    // run();
+}
+
+fn run(_: &str) {
     test("Starting the script...");
 
     let output = Command::new("bash")
